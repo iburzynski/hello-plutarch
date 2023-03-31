@@ -41,8 +41,17 @@
     nixConfig = {
       ## Setup IOG cache. See
       ## https://input-output-hk.github.io/haskell.nix/tutorials/getting-started.html#setting-up-the-binary-cache
-      extra-trusted-substituters = ["https://cache.iog.io"];
-      extra-trusted-public-keys = ["hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="];
+      extra-experimental-features = [ "nix-command" "flakes" "ca-derivations" ];
+      extra-trusted-substituters = [
+        "https://cache.nixos.org"
+        "https://cache.iog.io"
+        "https://cache.zw3rk.com"
+        ];
+      extra-trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+        "loony-tools:pr9m4BkM/5/eSTZlkQyRt57Jz7OMBxNSUiMC4FkcNfk="
+        ];
       allow-import-from-derivation = "true";
     };
 }

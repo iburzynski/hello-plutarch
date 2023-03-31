@@ -5,5 +5,6 @@ tmp/
 *~
 *#
 /.direnv
+/.envrc
 /dist-newstyle
 result

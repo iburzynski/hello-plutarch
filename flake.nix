@@ -1,7 +1,6 @@
 {
   inputs = {
-    ## This version of haskell.nix allows to *copy* GHC 9.2.4
-    haskellNix.url = "github:input-output-hk/haskell.nix?ref=0.0.68";
+    haskellNix.url = "github:input-output-hk/haskell.nix";
     nixpkgs.follows = "haskellNix/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     ## See https://input-output-hk.github.io/cardano-haskell-packages/
@@ -19,7 +18,7 @@
         hello-plutarch =
           final.haskell-nix.project' {
             src = ./.;
-            compiler-nix-name = "ghc924";
+            compiler-nix-name = "ghc925";
             inputMap = {
               "https://input-output-hk.github.io/cardano-haskell-packages" = CHaP;
             };
